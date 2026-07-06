@@ -13,6 +13,7 @@ var I18N = {
       heroTagline: "Premium Stainless Steel Kitchenware",
       // CTA
       ctaRequestQuote: "询价 / Request Quote",
+      priceNote: "以上价格仅供参考，请联系我们获取最新报价",
       // Stats
       statSKU: "产品 SKU",
       statSeries: "产品系列",
@@ -44,6 +45,7 @@ var I18N = {
       heroTagline: "Premium Stainless Steel Kitchenware",
       // CTA
       ctaRequestQuote: "Request Quote",
+      priceNote: "Prices shown are indicative only. Contact us for updated quotation.",
       statSKU: "SKU",
       statSeries: "Series",
       stat304: "304 Items",
@@ -69,6 +71,7 @@ var I18N = {
       heroTagline: "Premium Stainless Steel Kitchenware",
       // CTA
       ctaRequestQuote: "Minta Penawaran",
+      priceNote: "Harga hanya indikasi. Hubungi kami untuk penawaran terbaru.",
       statSKU: "SKU Produk",
       statSeries: "Seri Produk",
       stat304: "Item 304",

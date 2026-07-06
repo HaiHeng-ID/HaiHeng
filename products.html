@@ -163,7 +163,7 @@
     // -- Nav --
     var navHtml = '';
     C.series.forEach(function(s) {
-      navHtml += '<a onclick="scrollTo(\'' + s.id + '\')">' + s.icon + ' ' + L.seriesName(s) + '</a>';
+      navHtml += '<a onclick="scrollToSeries(\'' + s.id + '\')">' + s.icon + ' ' + L.seriesName(s) + '</a>';
     });
     document.getElementById("nav").innerHTML = navHtml;
 
@@ -250,9 +250,12 @@
 })();
 
 // ========== 导航滚动 ==========
-window.scrollTo = function(id) {
+window.scrollToSeries = function(id) {
   var el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!el) return;
+  var navH = document.getElementById("nav").offsetHeight;
+  var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+  window.scrollTo({ top: top, behavior: "smooth" });
 };
 
 // ========== 详情面板 ==========

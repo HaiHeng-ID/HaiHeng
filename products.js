@@ -116,25 +116,25 @@ var CATALOG = {
     { sku: "1916-JLDHPDS", name: "佳乐儿童大号平底勺", name_en: "Jiale Children's Large Flat Spoon", name_id: "Sendok Datar Besar Anak Jiale", price: "9,800", material: "201", qty: 300, series: "佳乐系列" },
 
     // ---- 圆美系列 ----
-    { sku: "1789-304YMC", name: "304圆美木柄10铲", name_en: "304 Yuanmei Wooden Handle 10\" Spatula", name_id: "Spatula Gagang Kayu 10\" Yuanmei 304", price: "38,080", material: "304", qty: 80, series: "圆美系列" },
-    { sku: "1790-304YMS", name: "304圆美木柄10勺", name_en: "304 Yuanmei Wooden Handle 10\" Spoon", name_id: "Sendok Gagang Kayu 10\" Yuanmei 304", price: "38,080", material: "304", qty: 80, series: "圆美系列" },
-    { sku: "1054-YMDC", name: "圆美木柄加深铲", name_en: "Yuanmei Wooden Handle Deep Spatula", name_id: "Spatula Dalam Gagang Kayu Yuanmei", price: "38,080", material: "304", qty: 60, series: "圆美系列" },
-    { sku: "1055-YMDS", name: "圆美木柄加深勺", name_en: "Yuanmei Wooden Handle Deep Spoon", name_id: "Sendok Dalam Gagang Kayu Yuanmei", price: "38,080", material: "304", qty: 60, series: "圆美系列" },
+    { sku: "1789-304YMC", name: "304圆美木柄10铲", name_en: "304 Yuanmei Wooden Handle 10\" Spatula", name_id: "Spatula Gagang Kayu 10\" Yuanmei 304", price: "38,080", material: "304", qty: 80, series: "圆美系列", label: "best" },
+    { sku: "1790-304YMS", name: "304圆美木柄10勺", name_en: "304 Yuanmei Wooden Handle 10\" Spoon", name_id: "Sendok Gagang Kayu 10\" Yuanmei 304", price: "38,080", material: "304", qty: 80, series: "圆美系列", label: "best" },
+    { sku: "1054-YMDC", name: "圆美木柄加深铲", name_en: "Yuanmei Wooden Handle Deep Spatula", name_id: "Spatula Dalam Gagang Kayu Yuanmei", price: "38,080", material: "304", qty: 60, series: "圆美系列", label: "best" },
+    { sku: "1055-YMDS", name: "圆美木柄加深勺", name_en: "Yuanmei Wooden Handle Deep Spoon", name_id: "Sendok Dalam Gagang Kayu Yuanmei", price: "38,080", material: "304", qty: 60, series: "圆美系列", label: "best" },
     { sku: "1175-YMLS14CM", name: "圆美木柄14cm漏勺", name_en: "Yuanmei 14cm Strainer Spoon", name_id: "Sendok Saring 14cm Gagang Kayu Yuanmei", price: "47,600", material: "201", qty: 50, series: "圆美系列" },
     { sku: "1331-YMLS16CM", name: "圆美木柄16cm漏勺", name_en: "Yuanmei 16cm Strainer Spoon", name_id: "Sendok Saring 16cm Gagang Kayu Yuanmei", price: "50,400", material: "201", qty: 50, series: "圆美系列" },
     { sku: "1597-YMLS18CM", name: "圆美木柄18cm漏勺", name_en: "Yuanmei 18cm Strainer Spoon", name_id: "Sendok Saring 18cm Gagang Kayu Yuanmei", price: "53,200", material: "201", qty: 50, series: "圆美系列" },
 
     // ---- 德雅系列 ----
-    { sku: "1645-304DYGYC", name: "304德雅木柄隔油铲", name_en: "304 Deya Oil-Separating Spatula", name_id: "Spatula Pemisah Minyak Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列" },
-    { sku: "1579-304DYC", name: "304德雅木柄铲", name_en: "304 Deya Wooden Handle Spatula", name_id: "Spatula Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列" },
-    { sku: "1580-304DYS", name: "304德雅木柄勺", name_en: "304 Deya Wooden Handle Spoon", name_id: "Sendok Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列" },
-    { sku: "1646-304DYLS", name: "304德雅木柄10漏", name_en: "304 Deya 10\" Strainer Spoon", name_id: "Sendok Saring 10\" Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列" },
+    { sku: "1645-304DYGYC", name: "304德雅木柄隔油铲", name_en: "304 Deya Oil-Separating Spatula", name_id: "Spatula Pemisah Minyak Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列", label: "new" },
+    { sku: "1579-304DYC", name: "304德雅木柄铲", name_en: "304 Deya Wooden Handle Spatula", name_id: "Spatula Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列", label: "new" },
+    { sku: "1580-304DYS", name: "304德雅木柄勺", name_en: "304 Deya Wooden Handle Spoon", name_id: "Sendok Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列", label: "new" },
+    { sku: "1646-304DYLS", name: "304德雅木柄10漏", name_en: "304 Deya 10\" Strainer Spoon", name_id: "Sendok Saring 10\" Gagang Kayu Deya 304", price: "39,200", material: "304", qty: 80, series: "德雅系列", label: "new" },
 
     // ---- 喜运系列 ----
     { sku: "1581-304XYC", name: "304三钉喜运木柄铲", name_en: "304 Xiyun 3-Rivet Spatula", name_id: "Spatula 3 Paku Keling Gagang Kayu Xiyun 304", price: "42,000", material: "304", qty: 80, series: "喜运系列" },
     { sku: "1582-304XYS", name: "304三钉喜运木柄勺", name_en: "304 Xiyun 3-Rivet Spoon", name_id: "Sendok 3 Paku Keling Gagang Kayu Xiyun 304", price: "42,000", material: "304", qty: 80, series: "喜运系列" },
-    { sku: "1846-304XYFS", name: "304三钉喜运7公分方碗勺", name_en: "304 Xiyun 3-Rivet 7cm Square Bowl Spoon", name_id: "Sendok Mangkuk Persegi 7cm 3 Paku Keling Xiyun 304", price: "38,080", material: "304", qty: 120, series: "喜运系列" },
-    { sku: "1847-304XYFLS", name: "304三钉喜运7公分方碗漏勺", name_en: "304 Xiyun 3-Rivet 7cm Square Bowl Strainer", name_id: "Sendok Saring Mangkuk Persegi 7cm 3 Paku Keling Xiyun 304", price: "38,080", material: "304", qty: 120, series: "喜运系列" },
+    { sku: "1846-304XYFS", name: "304三钉喜运7公分方碗勺", name_en: "304 Xiyun 3-Rivet 7cm Square Bowl Spoon", name_id: "Sendok Mangkuk Persegi 7cm 3 Paku Keling Xiyun 304", price: "38,080", material: "304", qty: 120, series: "喜运系列", label: "new" },
+    { sku: "1847-304XYFLS", name: "304三钉喜运7公分方碗漏勺", name_en: "304 Xiyun 3-Rivet 7cm Square Bowl Strainer", name_id: "Sendok Saring Mangkuk Persegi 7cm 3 Paku Keling Xiyun 304", price: "38,080", material: "304", qty: 120, series: "喜运系列", label: "new" },
     { sku: "1891-XYHJL", name: "喜运木柄花椒漏", name_en: "Xiyun Wooden Handle Strainer", name_id: "Sendok Saring Gagang Kayu Xiyun", price: "38,080", material: "201", qty: 80, series: "喜运系列" },
 
     // ---- 雅顺系列 ----

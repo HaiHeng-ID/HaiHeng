@@ -3,85 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>海亨贸易 · 产品目录 | HAIHENG TRADING · Catalog</title>
+<title>海亨贸易 · 不锈钢厨具 | HAIHENG TRADING</title>
 <style>
+  :root {
+    --brand: #1e5a99;
+    --brand-dark: #0d3b6e;
+    --brand-light: #e8f0fb;
+    --accent: #c0392b;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --green: #059669;
+    --green-light: #d1fae5;
+    --spacing: clamp(16px, 3vw, 48px);
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
-  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 48px 20px 32px; text-align: center; position: relative; }
-  .header h1 { font-size: 2.4em; font-weight: 700; margin-bottom: 8px; }
-  .header .subtitle { font-size: 1.1em; opacity: 0.85; margin-bottom: 4px; }
-  .header .stats { display: flex; justify-content: center; gap: 32px; margin-top: 20px; flex-wrap: wrap; }
-  .header .stat { text-align: center; }
-  .header .stat .num { font-size: 1.8em; font-weight: 700; color: #e94560; }
-  .header .stat .label { font-size: 0.8em; opacity: 0.7; letter-spacing: 1px; }
-  /* 语言切换 */
-  .lang-bar { display: flex; justify-content: center; gap: 6px; margin-top: 24px; }
-  .lang-bar button { padding: 6px 18px; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 20px; background: transparent; color: rgba(255,255,255,0.75); cursor: pointer; font-size: 0.85em; font-weight: 500; transition: all 0.2s; }
-  .lang-bar button:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
-  .lang-bar button.active { background: white; color: #1a1a2e; border-color: white; font-weight: 700; }
-  /* Nav */
-  .nav { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid #e0e0e0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 12px 20px; display: flex; gap: 8px; overflow-x: auto; flex-wrap: wrap; justify-content: center; }
-  .nav a { text-decoration: none; color: #555; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; white-space: nowrap; transition: all 0.2s; cursor: pointer; }
-  .nav a:hover, .nav a.active { background: #e94560; color: white; }
-  /* Container */
-  .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
-  .series { margin-bottom: 40px; }
-  .series-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 3px solid #e94560; }
-  .series-title h2 { font-size: 1.5em; color: #1a1a2e; }
-  .series-title .badge { color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
-  .badge.s304 { background: #2d6a4f; } .badge.s201 { background: #e76f51; } .badge.mixed { background: #5a4fcf; }
-  .series-desc { color: #777; font-size: 0.85em; margin-bottom: 16px; }
-  /* Cards */
-  .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-  .product-card { background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; overflow: hidden; border-left: 4px solid transparent; }
-  .product-card.steel-304 { border-left-color: #2d6a4f; } .product-card.steel-201 { border-left-color: #e76f51; }
-  .product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-  .product-img { width: 100%; height: 200px; overflow: hidden; background: #f8f8f8; display: flex; align-items: center; justify-content: center; }
-  .product-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s; }
-  .product-card:hover .product-img img { transform: scale(1.06); }
-  .product-info { padding: 16px; }
-  .product-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-  .product-header .sku { font-size: 0.7em; color: #999; font-family: monospace; }
-  .product-header .material-tag { font-size: 0.65em; font-weight: 700; padding: 2px 8px; border-radius: 8px; }
-  .material-tag.m304 { background: #d8f3dc; color: #2d6a4f; } .material-tag.m201 { background: #ffddd2; color: #e76f51; }
-  .product-name { font-size: 0.95em; font-weight: 600; color: #1a1a2e; margin-bottom: 8px; line-height: 1.4; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--gray-50); color: var(--gray-900); line-height: 1.6; }
+
+  /* ====== 1️⃣ 首页品牌定位 ====== */
+  .hero {
+    background: linear-gradient(160deg, #0d3b6e 0%, #1e5a99 40%, #2b7ac4 100%);
+    color: white; text-align: center; padding: 80px 20px 64px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; top: -60px; right: -80px;
+    width: 260px; height: 260px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: ""; position: absolute; bottom: -40px; left: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero .brand-name { font-size: 0.9em; letter-spacing: 4px; opacity: 0.7; text-transform: uppercase; margin-bottom: 12px; position: relative; z-index: 1; }
+  .hero h1 { font-size: clamp(1.8em, 5vw, 3em); font-weight: 800; margin-bottom: 16px; position: relative; z-index: 1; }
+  .hero .tagline { font-size: clamp(1em, 2.5vw, 1.3em); opacity: 0.9; font-weight: 400; margin-bottom: 8px; position: relative; z-index: 1; }
+  .hero .subtag { font-size: 0.9em; opacity: 0.65; position: relative; z-index: 1; }
+
+  /* Stats row — moved down from hero */
+  .stats-bar {
+    background: white; padding: 24px 20px; display: flex;
+    justify-content: center; gap: clamp(24px, 5vw, 56px);
+    flex-wrap: wrap; border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .stat-item { text-align: center; }
+  .stat-item .num { font-size: 1.6em; font-weight: 800; color: var(--brand); }
+  .stat-item .lbl { font-size: 0.78em; color: var(--gray-500); letter-spacing: 0.5px; }
+
+  /* Language switch — in hero */
+  .lang-bar { display: flex; justify-content: center; gap: 6px; margin-top: 32px; position: relative; z-index: 1; }
+  .lang-bar button {
+    padding: 6px 18px; border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 20px; background: transparent; color: rgba(255,255,255,0.8);
+    cursor: pointer; font-size: 0.85em; font-weight: 500; transition: all 0.2s;
+  }
+  .lang-bar button:hover { border-color: rgba(255,255,255,0.75); color: #fff; }
+  .lang-bar button.active { background: white; color: var(--brand-dark); border-color: white; font-weight: 700; }
+
+  /* ====== 4️⃣ 导航 — 品牌蓝 + 灰色 ====== */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: white; border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 14px 20px; display: flex; gap: 8px;
+    overflow-x: auto; flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav a {
+    text-decoration: none; color: var(--gray-500);
+    padding: 8px 18px; border-radius: 20px; font-size: 0.88em;
+    font-weight: 500; white-space: nowrap; transition: all 0.2s; cursor: pointer;
+    flex-shrink: 0;
+  }
+  .nav a:hover { background: var(--brand-light); color: var(--brand); }
+  .nav a.active { background: var(--brand); color: white; }
+
+  /* ====== 5️⃣ 页面留白 ====== */
+  .container { max-width: 1140px; margin: 0 auto; padding: var(--spacing) 20px; }
+  .series { margin-bottom: 64px; }
+  .series-title {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 12px; padding-bottom: 16px;
+    border-bottom: 2px solid var(--brand-light);
+    position: relative;
+  }
+  .series-title::after {
+    content: ""; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--brand);
+  }
+  .series-title h2 { font-size: 1.4em; color: var(--gray-900); font-weight: 700; }
+  .series-title .badge {
+    color: white; padding: 4px 12px; border-radius: 12px;
+    font-size: 0.72em; font-weight: 700;
+  }
+  .badge.s304 { background: var(--green); }
+  .badge.s201 { background: var(--brand); }
+  .badge.mixed { background: #6b5ce7; }
+  .series-desc { color: var(--gray-500); font-size: 0.85em; margin-bottom: 24px; line-height: 1.6; }
+
+  /* ====== 3️⃣ 统一图片比例 — 3:4 ====== */
+  .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+  .product-card {
+    background: white; border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    transition: transform 0.25s, box-shadow 0.25s; cursor: pointer;
+    overflow: hidden; position: relative;
+  }
+  .product-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
+
+  /* ====== 2️⃣ 产品卡片标签 (NEW / BEST SELLER) ====== */
+  .product-img {
+    width: 100%; aspect-ratio: 3 / 4;
+    overflow: hidden; background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .product-img img {
+    width: 100%; height: 100%; object-fit: contain;
+    transition: transform 0.3s; padding: 8px;
+  }
+  .product-card:hover .product-img img { transform: scale(1.05); }
+  .prod-label {
+    position: absolute; top: 10px; left: 10px;
+    padding: 3px 10px; border-radius: 6px;
+    font-size: 0.68em; font-weight: 800; letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  .prod-label.new { background: var(--brand); color: white; }
+  .prod-label.hot { background: var(--accent); color: white; }
+  .prod-label.best { background: #f59e0b; color: #fff; }
+
+  .product-info { padding: 16px 18px 20px; }
+  .product-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .product-header .sku { font-size: 0.68em; color: var(--gray-500); font-family: 'SF Mono', monospace; }
+  .material-tag { font-size: 0.65em; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+  .material-tag.m304 { background: var(--green-light); color: var(--green); }
+  .material-tag.m201 { background: var(--brand-light); color: var(--brand); }
+
+  .product-name { font-size: 0.92em; font-weight: 600; color: var(--gray-900); margin-bottom: 10px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* ====== 6️⃣ 核心卖点图标 ====== */
+  .product-highlights {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+  }
+  .highlight-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 12px; font-size: 0.7em;
+    font-weight: 600; white-space: nowrap;
+  }
+  .highlight-pill.f304 { background: var(--green-light); color: var(--green); }
+  .highlight-pill.food { background: #fef3c7; color: #92400e; }
+  .highlight-pill.mirror { background: #e0e7ff; color: #4338ca; }
+  .highlight-pill.dish { background: #fce7f3; color: #be185d; }
+
   .product-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85em; }
-  .product-price { font-weight: 700; color: #e94560; font-size: 1.05em; }
-  .product-qty { color: #888; font-size: 0.75em; }
-  /* Detail panel */
+  .product-price { font-weight: 700; color: var(--accent); font-size: 1.05em; }
+  .product-qty { color: var(--gray-500); font-size: 0.75em; }
+
+  /* ====== 🔟 每屏 CTA 按钮 ====== */
+  .series-cta {
+    text-align: center; margin-top: 28px;
+  }
+  .series-cta a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 28px; background: var(--brand); color: white;
+    border-radius: 28px; font-size: 0.9em; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(30,90,153,0.25);
+  }
+  .series-cta a:hover { background: var(--brand-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(30,90,153,0.35); }
+
+  /* ====== 详情面板 ====== */
+  .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.35); z-index: 190; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .overlay.show { opacity: 1; pointer-events: auto; }
   .detail-panel { position: fixed; top: 0; right: -480px; width: 440px; height: 100vh; background: white; box-shadow: -4px 0 24px rgba(0,0,0,0.15); z-index: 200; transition: right 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
   .detail-panel.open { right: 0; }
-  .detail-panel .close-btn { position: sticky; top: 16px; float: right; margin-right: 16px; width: 36px; height: 36px; border-radius: 50%; border: none; background: rgba(0,0,0,0.6); color: white; font-size: 1.2em; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
-  .detail-panel .close-btn:hover { background: rgba(0,0,0,0.85); }
-  .detail-img { width: 100%; height: 380px; background: #f8f8f8; display: flex; align-items: center; justify-content: center; }
-  .detail-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .detail-panel .close-btn { position: sticky; top: 16px; float: right; margin-right: 16px; width: 36px; height: 36px; border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: white; font-size: 1.2em; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
+  .detail-panel .close-btn:hover { background: rgba(0,0,0,0.8); }
+  .detail-img { width: 100%; aspect-ratio: 3/4; background: var(--gray-100); display: flex; align-items: center; justify-content: center; }
+  .detail-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 16px; }
   .detail-body { padding: 24px; }
-  .detail-body .sku-large { font-size: 0.8em; color: #999; font-family: monospace; margin-bottom: 4px; }
-  .detail-body h3 { font-size: 1.3em; color: #1a1a2e; margin-bottom: 20px; line-height: 1.4; }
-  .detail-body .detail-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
-  .detail-body .detail-row .label { color: #888; font-size: 0.9em; }
+  .detail-body .sku-large { font-size: 0.78em; color: var(--gray-500); font-family: 'SF Mono', monospace; margin-bottom: 4px; }
+  .detail-body h3 { font-size: 1.25em; color: var(--gray-900); margin-bottom: 20px; line-height: 1.4; }
+  .detail-body .detail-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--gray-100); }
+  .detail-body .detail-row .label { color: var(--gray-500); font-size: 0.9em; }
   .detail-body .detail-row .value { font-weight: 600; font-size: 0.95em; }
-  .detail-body .detail-row .value.price { color: #e94560; font-size: 1.2em; }
-  .detail-body .detail-series { margin-top: 20px; padding: 14px 16px; background: #f8f9fa; border-radius: 8px; font-size: 0.85em; color: #666; line-height: 1.6; }
-  .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 190; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-  .overlay.show { opacity: 1; pointer-events: auto; }
-  /* Footer */
-  .footer { text-align: center; padding: 40px 20px; background: #1a1a2e; color: #666; font-size: 0.85em; }
-  .footer a { color: #e94560; }
+  .detail-body .detail-row .value.price { color: var(--accent); font-size: 1.2em; }
+  .detail-body .detail-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .detail-body .detail-series { margin-top: 20px; padding: 14px 16px; background: var(--gray-50); border-radius: 8px; font-size: 0.85em; color: var(--gray-700); line-height: 1.6; }
+
+  /* ====== Footer ====== */
+  .footer { text-align: center; padding: 48px 20px; background: var(--brand-dark); color: rgba(255,255,255,0.6); font-size: 0.85em; line-height: 1.8; }
+  .footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
   .footer p { margin-bottom: 4px; }
-  /* WhatsApp floating button */
+
+  /* WhatsApp */
   .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 250; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.6em; cursor: pointer; box-shadow: 0 4px 16px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; }
   .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 22px rgba(37,211,102,0.55); }
   .wa-float .tooltip { position: absolute; right: 64px; background: #333; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 0.45em; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
   .wa-float:hover .tooltip { opacity: 1; }
+
   /* Responsive */
-  @media (max-width: 720px) { .header h1 { font-size: 1.6em; } .header .stats { gap: 16px; } .products { grid-template-columns: 1fr; } .detail-panel { width: 100%; right: -100%; } }
+  @media (max-width: 720px) {
+    .hero { padding: 56px 20px 44px; }
+    .hero h1 { font-size: 1.6em; }
+    .hero .tagline { font-size: 1em; }
+    .stats-bar { gap: 20px; padding: 18px; }
+    .stat-item .num { font-size: 1.3em; }
+    .products { grid-template-columns: 1fr; }
+    .detail-panel { width: 100%; right: -100%; }
+    .nav { justify-content: flex-start; padding: 10px 14px; gap: 6px; }
+    .nav a { padding: 6px 14px; font-size: 0.8em; }
+    .container { padding: 24px 14px; }
+    .series { margin-bottom: 48px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ========== Header（动态渲染） ========== -->
-<div class="header" id="header"></div>
+<!-- ========== Hero（动态渲染） ========== -->
+<div class="hero" id="hero"></div>
+
+<!-- ========== 数据统计条 ========== -->
+<div class="stats-bar" id="statsBar"></div>
 
 <!-- ========== 导航（动态渲染） ========== -->
 <nav class="nav" id="nav"></nav>
@@ -96,6 +248,7 @@
   <div class="detail-body">
     <div class="sku-large" id="detailSku"></div>
     <h3 id="detailName"></h3>
+    <div class="detail-highlights" id="detailHighlights"></div>
     <div class="detail-row"><span class="label" id="lblPrice"></span><span class="value price" id="detailPrice"></span></div>
     <div class="detail-row"><span class="label" id="lblMaterial"></span><span class="value" id="detailMaterial"></span></div>
     <div class="detail-row"><span class="label" id="lblPacking"></span><span class="value" id="detailQty"></span></div>
@@ -132,42 +285,53 @@
   window.__PRODUCTS = {};
   C.products.forEach(function(p) { window.__PRODUCTS[p.sku] = p; });
 
-  // ⚠️ WhatsApp 号码——改成你的
   var WA_NUMBER = "6285177891483";
   var WA_MSG = encodeURIComponent("Halo, saya tertarik dengan produk stainless steel Anda. Bisa minta katalog dan harga?");
 
-  // ========== 全局渲染（需先定义再用） ==========
+  // ========== 核心卖点图标 ==========
+  function getHighlightsHTML(p) {
+    var pills = [];
+    if (p.material === "304") pills.push('<span class="highlight-pill f304">🛡️ SUS 304</span>');
+    pills.push('<span class="highlight-pill food">🍽️ Food Grade</span>');
+    pills.push('<span class="highlight-pill mirror">✨ Mirror Finish</span>');
+    pills.push('<span class="highlight-pill dish">🧼 Dishwasher Safe</span>');
+    return '<div class="product-highlights">' + pills.join('') + '</div>';
+  }
+
+  // ========== 全局渲染 ==========
   window.renderAll = function() {
     var L = I18N;
     var total = C.products.length;
     var count304 = C.products.filter(function(p) { return p.material === "304"; }).length;
     var count201 = total - count304;
 
-    // -- Header --
-    document.getElementById("header").innerHTML =
-      '<h1>' + L.t("headerTitle") + '</h1>' +
-      '<p class="subtitle">' + C.brand.nameEn + '</p>' +
-      '<p class="subtitle">' + L.brandTagline() + '</p>' +
-      '<div class="stats">' +
-        '<div class="stat"><div class="num">' + total + '</div><div class="label">' + L.t("statSKU") + '</div></div>' +
-        '<div class="stat"><div class="num">' + C.series.length + '</div><div class="label">' + L.t("statSeries") + '</div></div>' +
-        '<div class="stat"><div class="num">' + count304 + '</div><div class="label">' + L.t("stat304") + '</div></div>' +
-        '<div class="stat"><div class="num">' + count201 + '</div><div class="label">' + L.t("stat201") + '</div></div>' +
-      '</div>' +
+    // === 1️⃣ Hero — 品牌定位第一屏 ===
+    document.getElementById("hero").innerHTML =
+      '<div class="brand-name">HAIHENG TRADING</div>' +
+      '<h1>' + L.t("heroTitle") + '</h1>' +
+      '<p class="tagline">' + L.t("heroTagline") + '</p>' +
+      '<p class="subtag">' + L.brandTagline() + '</p>' +
       '<div class="lang-bar">' +
         '<button onclick="I18N.switchTo(\'zh\')" class="' + (L.current==="zh"?"active":"") + '">🇨🇳 ' + L.t("langZh") + '</button>' +
         '<button onclick="I18N.switchTo(\'en\')" class="' + (L.current==="en"?"active":"") + '">🇬🇧 ' + L.t("langEn") + '</button>' +
         '<button onclick="I18N.switchTo(\'id\')" class="' + (L.current==="id"?"active":"") + '">🇮🇩 ' + L.t("langId") + '</button>' +
       '</div>';
 
-    // -- Nav --
+    // === Stats bar ===
+    document.getElementById("statsBar").innerHTML =
+      '<div class="stat-item"><div class="num">' + total + '</div><div class="lbl">' + L.t("statSKU") + '</div></div>' +
+      '<div class="stat-item"><div class="num">' + C.series.length + '</div><div class="lbl">' + L.t("statSeries") + '</div></div>' +
+      '<div class="stat-item"><div class="num">' + count304 + '</div><div class="lbl">' + L.t("stat304") + '</div></div>' +
+      '<div class="stat-item"><div class="num">' + count201 + '</div><div class="lbl">' + L.t("stat201") + '</div></div>';
+
+    // === Nav ===
     var navHtml = '';
     C.series.forEach(function(s) {
       navHtml += '<a onclick="scrollToSeries(\'' + s.id + '\')">' + s.icon + ' ' + L.seriesName(s) + '</a>';
     });
     document.getElementById("nav").innerHTML = navHtml;
 
-    // -- Container --
+    // === 2️⃣ + 6️⃣ + 🔟 产品卡片 + 卖点 + CTA ===
     var containerHtml = '';
     C.series.forEach(function(s) {
       var prods = C.products.filter(function(p) { return p.series === s.name; });
@@ -183,18 +347,27 @@
           '<div class="products">';
 
       prods.forEach(function(p) {
-        var matClass = p.material === "304" ? "steel-304" : "steel-201";
-        var matTag = p.material === "304" ? "m304" : "m201";
         var img = "images/" + p.sku + ".jpg";
+
+        // 2️⃣ 产品标签 (NEW / HOT / BEST)
+        var labelHTML = '';
+        if (p.label) {
+          labelHTML = '<span class="prod-label ' + p.label + '">' +
+            (p.label === 'new' ? '🆕 NEW' : p.label === 'hot' ? '🔥 HOT' : p.label === 'best' ? '⭐ BEST' : p.label) +
+            '</span>';
+        }
+
         containerHtml +=
-          '<div class="product-card ' + matClass + '" onclick="openDetail(\'' + p.sku + '\')">' +
-            '<div class="product-img"><img src="' + img + '" alt="' + p.sku + '" loading="lazy"></div>' +
+          '<div class="product-card" onclick="openDetail(\'' + p.sku + '\')">' +
+            '<div class="product-img">' + labelHTML + '<img src="' + img + '" alt="' + p.sku + '" loading="lazy"></div>' +
             '<div class="product-info">' +
               '<div class="product-header">' +
                 '<span class="sku">' + p.sku + '</span>' +
-                '<span class="material-tag ' + matTag + '">' + p.material + '</span>' +
+                '<span class="material-tag ' + (p.material === "304" ? "m304" : "m201") + '">' + p.material + '</span>' +
               '</div>' +
               '<div class="product-name">' + L.productName(p) + '</div>' +
+              // 6️⃣ 核心卖点图标
+              getHighlightsHTML(p) +
               '<div class="product-meta">' +
                 '<span class="product-price">Rp ' + p.price + '</span>' +
                 '<span class="product-qty">' + p.qty + ' ' + L.t("detailPcsUnit") + '</span>' +
@@ -203,27 +376,33 @@
           '</div>';
       });
 
-      containerHtml += '</div></section>';
+      // 🔟 每系列 CTA
+      containerHtml += '</div>' +
+        '<div class="series-cta">' +
+          '<a href="https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent("Halo, saya tertarik dengan " + L.seriesName(s) + ". Bisa minta penawaran?") + '" target="_blank">' +
+            '💬 ' + L.t("ctaRequestQuote") +
+          '</a>' +
+        '</div>' +
+      '</section>';
     });
 
     document.getElementById("container").innerHTML = containerHtml;
 
-    // -- Footer --
+    // === Footer ===
     document.getElementById("footer").innerHTML =
       '<p>' + L.brandFooter() + '</p>' +
       '<p>' + L.brandContact() + '</p>';
 
-    // -- WhatsApp 按钮 --
+    // === WhatsApp ===
     document.getElementById("waFloat").href = "https://wa.me/" + WA_NUMBER + "?text=" + WA_MSG;
     document.getElementById("waTooltip").textContent = L.t("contactLabel");
 
-    // -- 详情面板静态标签更新 --
+    // === 详情面板标签 ===
     document.getElementById("lblPrice").textContent = L.t("detailUnitPrice");
     document.getElementById("lblMaterial").textContent = L.t("detailMaterial");
     document.getElementById("lblPacking").textContent = L.t("detailPacking");
     document.getElementById("lblSeries").textContent = L.t("detailSeries");
 
-    // -- 重新监听滚动导航 --
     setTimeout(observeSections, 100);
   };
 
@@ -272,6 +451,13 @@ window.openDetail = function(sku) {
   document.getElementById("detailQty").textContent = p.qty + " " + L.t("detailPcsUnit");
   document.getElementById("detailSeries").textContent = s ? L.seriesName(s) : p.series;
   document.getElementById("detailDesc").textContent = s ? L.seriesDesc(s) : "";
+  // 详情面板也有卖点图标
+  var pills = [];
+  if (p.material === "304") pills.push('<span class="highlight-pill f304">🛡️ SUS 304</span>');
+  pills.push('<span class="highlight-pill food">🍽️ Food Grade</span>');
+  pills.push('<span class="highlight-pill mirror">✨ Mirror Finish</span>');
+  pills.push('<span class="highlight-pill dish">🧼 Dishwasher Safe</span>');
+  document.getElementById("detailHighlights").innerHTML = pills.join('');
   document.getElementById("detailPanel").classList.add("open");
   document.getElementById("overlay").classList.add("show");
   document.body.style.overflow = "hidden";

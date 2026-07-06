@@ -8,9 +8,11 @@ var I18N = {
 
   dict: {
     zh: {
-      // Header
-      headerTitle: "🏭 海亨贸易 · 不锈钢厨具",
-      headerTagline: "Made in China · 专供印尼市场",
+      // Hero
+      heroTitle: "不锈钢厨具 · 专供印尼",
+      heroTagline: "Premium Stainless Steel Kitchenware",
+      // CTA
+      ctaRequestQuote: "询价 / Request Quote",
       // Stats
       statSKU: "产品 SKU",
       statSeries: "产品系列",
@@ -38,8 +40,10 @@ var I18N = {
     },
 
     en: {
-      headerTitle: "🏭 HAIHENG TRADING · Stainless Steel Kitchenware",
-      headerTagline: "Made in China · For Indonesian Market",
+      heroTitle: "Stainless Steel Kitchenware · Indonesian Market",
+      heroTagline: "Premium Stainless Steel Kitchenware",
+      // CTA
+      ctaRequestQuote: "Request Quote",
       statSKU: "SKU",
       statSeries: "Series",
       stat304: "304 Items",
@@ -61,8 +65,10 @@ var I18N = {
     },
 
     id: {
-      headerTitle: "🏭 HAIHENG TRADING · Peralatan Dapur Stainless Steel",
-      headerTagline: "Made in China · Khusus Pasar Indonesia",
+      heroTitle: "Peralatan Dapur Stainless Steel · Pasar Indonesia",
+      heroTagline: "Premium Stainless Steel Kitchenware",
+      // CTA
+      ctaRequestQuote: "Minta Penawaran",
       statSKU: "SKU Produk",
       statSeries: "Seri Produk",
       stat304: "Item 304",

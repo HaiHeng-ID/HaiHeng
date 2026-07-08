@@ -252,6 +252,8 @@
     <div class="detail-row"><span class="label" id="lblPrice"></span><span class="value price" id="detailPrice"></span></div>
     <div class="detail-row"><span class="label" id="lblMaterial"></span><span class="value" id="detailMaterial"></span></div>
     <div class="detail-row"><span class="label" id="lblPacking"></span><span class="value" id="detailQty"></span></div>
+    <div class="detail-row"><span class="label" id="lblDimensions"></span><span class="value" id="detailDim"></span></div>
+    <div class="detail-row"><span class="label" id="lblWeight"></span><span class="value" id="detailWeight"></span></div>
     <div class="detail-row"><span class="label" id="lblSeries"></span><span class="value" id="detailSeries"></span></div>
     <div class="detail-series" id="detailDesc"></div>
   </div>
@@ -401,6 +403,8 @@
     document.getElementById("lblPrice").textContent = L.t("detailUnitPrice");
     document.getElementById("lblMaterial").textContent = L.t("detailMaterial");
     document.getElementById("lblPacking").textContent = L.t("detailPacking");
+    document.getElementById("lblDimensions").textContent = L.t("detailDimensions");
+    document.getElementById("lblWeight").textContent = L.t("detailWeight");
     document.getElementById("lblSeries").textContent = L.t("detailSeries");
 
     setTimeout(observeSections, 100);
@@ -449,6 +453,8 @@ window.openDetail = function(sku) {
   document.getElementById("detailPrice").textContent = "Rp " + p.price;
   document.getElementById("detailMaterial").textContent = p.material + " " + L.t("detailStainless");
   document.getElementById("detailQty").textContent = p.qty + " " + L.t("detailPcsUnit");
+  document.getElementById("detailDim").textContent = p.dim || "-";
+  document.getElementById("detailWeight").textContent = p.weight || "-";
   document.getElementById("detailSeries").textContent = s ? L.seriesName(s) : p.series;
   document.getElementById("detailDesc").textContent = s ? L.seriesDesc(s) : "";
   // 详情面板也有卖点图标
